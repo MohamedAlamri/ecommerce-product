@@ -105,6 +105,7 @@ body {
   position: absolute;
   top: calc(100% + 20px);
   width: 300px;
+  height: 170px;
   padding: 25px;
   border-radius: 8px;
   background-color: #fff;
@@ -114,6 +115,33 @@ body {
   opacity: 0;
   -webkit-transition: .3s;
   transition: .3s;
+  z-index: 9000000;
+}
+
+.nav .container .shopping-cart .cart {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  .nav .container .shopping-cart {
+    width: 100%;
+    height: 250px;
+    right: 0;
+  }
+}
+
+.nav .container .shopping-cart .empty {
+  color: #84858a;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav .container .shopping-cart .container-cart {
@@ -124,6 +152,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 15px;
+}
+
+.nav .container .shopping-cart .container-cart .delate {
+  cursor: pointer;
 }
 
 .nav .container .shopping-cart .container-cart img {
@@ -156,7 +188,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 8px 0;
-  margin-top: 15px;
+  margin-top: 20px;
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -198,12 +230,41 @@ body {
 
 @media (max-width: 767px) {
   .nav .container .links {
-    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    width: 250px;
+    background-color: #fff;
+    top: 0;
+    left: -120%;
+    height: 100vh;
+    z-index: 5020000;
+    gap: 40px;
+    font-weight: bold;
+    padding-top: 70px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding-left: 60px;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .nav .container .links.active {
+    left: -5%;
   }
 }
 
 .nav .container .links li a {
   color: #84858a;
+}
+
+@media (max-width: 767px) {
+  .nav .container .links li a {
+    color: #000;
+    font-weight: bold;
+  }
 }
 
 .nav .container .nav-icons {
@@ -226,6 +287,12 @@ body {
 
 .landing {
   padding: 130px 0;
+}
+
+@media (max-width: 767px) {
+  .landing {
+    padding-top: 15px;
+  }
 }
 
 .landing .container {
@@ -252,14 +319,26 @@ body {
       flex-wrap: wrap;
 }
 
+.landing .container .imgs-slider .next-btn,
+.landing .container .imgs-slider .prev-btn {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .landing .container .imgs-slider {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
 .landing .container .imgs-slider .img-preview {
-  width: 80%;
+  max-width: 80%;
   margin-bottom: 15px;
 }
 
 @media (max-width: 767px) {
   .landing .container .imgs-slider .img-preview {
-    width: 100%;
+    display: none;
   }
 }
 
@@ -289,15 +368,23 @@ body {
 }
 
 .landing .container .imgs-slider .imgs-below img {
-  max-width: 20%;
+  width: 20%;
   border-radius: 6px;
   cursor: pointer;
   -webkit-transition: .3s;
   transition: .3s;
 }
 
-.landing .container .imgs-slider .imgs-below img.active, .landing .container .imgs-slider .imgs-below img:hover {
-  opacity: .7;
+@media (max-width: 767px) {
+  .landing .container .imgs-slider .imgs-below img {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .landing .container .imgs-slider .imgs-below img.active, .landing .container .imgs-slider .imgs-below img:hover {
+    opacity: .7;
+  }
 }
 
 .landing .container .right-content {
@@ -439,5 +526,40 @@ body {
   color: #84858a;
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
+}
+
+@media (max-width: 767px) {
+  .imgs-slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .imgs-slider .next-btn,
+  .imgs-slider .prev-btn {
+    position: absolute;
+    z-index: 2000000;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    display: block !important;
+    cursor: pointer;
+  }
+  .imgs-slider .next-btn {
+    right: 50px;
+  }
+  .imgs-slider .prev-btn {
+    left: 50px;
+  }
+  .imgs-below img {
+    width: 100% !important;
+    cursor: default !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
