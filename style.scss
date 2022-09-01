@@ -263,10 +263,10 @@ body {
     }
     
     .container {
-        align-items: center;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        // align-items: center;
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // gap: 20px;
 
         @media (max-width: 767px) {
             grid-template-columns: 1fr;
@@ -440,7 +440,7 @@ body {
         .next-btn,
         .prev-btn {
             position: absolute;
-            z-index: 2000000;
+            z-index: 20000000;
             background-color: #fff;
             padding: 20px;
             border-radius: 50%;
