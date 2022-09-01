@@ -215,14 +215,16 @@ let addToCart = () => {
     let btnNext = document.querySelector(".next-btn");
     let btnPrev = document.querySelector(".prev-btn");
 
+
+
     btnPrev.addEventListener("click", () => {
         if (currentNum <= 0) {
             currentNum = mobImg.length ;
         } 
 
         currentNum--
-        console.log(currentNum);
         mobSlid()
+
     })
 
 
@@ -233,7 +235,6 @@ let addToCart = () => {
 
 
         currentNum++
-        console.log(currentNum, "next");
         mobSlid()
     })
 
@@ -247,18 +248,3 @@ let addToCart = () => {
 
 
 
-
-    // menu for mobile
-    // let mobClose = document.querySelector(".mob-close")
-    // let menuIconMob = document.querySelector(".menu-icon-mob");
-
-    // menuIconMob.addEventListener("click", () => {
-    //     document.querySelector(".links").classList.add("active");
-
-    // })
-
-    // mobClose.addEventListener("click", () => {
-    //     // document.querySelector(".links").classList.remove("active");
-    //     console.log("closed");
-
-    // })
